@@ -4,7 +4,7 @@ resource "aws_vpc" "vpc_eks" {
   enable_dns_hostnames = true
   tags = merge(
     local.tags, {
-      Name = "terraform-vpc"
+      Name = "${var.project_name}-vpc"
     }
   )
 }
