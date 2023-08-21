@@ -13,15 +13,10 @@ terraform {
       version = "2.10.1"
     }
   }
-  backend "s3" {
-    bucket = "terraform-s3-julho-2023"
-    key    = "dev/terraform.tfstate"
-    region = "us-east-1"
-  }
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
 provider "kubernetes" {
